@@ -1,94 +1,151 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nm7z Store</title>
+<title>Calculadora</title>
+
 <style>
-body {font-family:Arial,sans-serif;margin:0;padding:0;color:#fff;background:url("https://raw.githubusercontent.com/Nme7zxx/Brainrots/refs/heads/main/655a10653f0d7d2dccae4b0180606e15.jpg") no-repeat center center fixed;background-size:cover;}
-.container {max-width:700px;margin:50px auto;padding:20px;background:rgba(0,0,0,0.7);border-radius:12px;box-shadow:0 0 25px rgba(128,0,255,0.6);overflow-x:auto;}
-h1 {font-size:2.5em;margin-bottom:20px;color:#b366ff;text-align:center;text-shadow:0 0 12px #8000ff;}
-h2 {margin-top:25px;text-align:left;border-bottom:2px solid #8000ff;padding-bottom:5px;color:#d9b3ff;text-shadow:0 0 8px #b366ff;}
-table {width:100%;border-collapse:collapse;margin-top:15px;}
-td {padding:8px;font-size:1em;text-shadow:0 0 6px #fff,0 0 10px #b366ff;}
-td.price {text-align:right;color:#ffccff;white-space:nowrap;text-shadow:0 0 6px #ff99ff,0 0 12px #ff33ff;}
-td.rate {text-align:right;color:#cc99ff;white-space:nowrap;text-shadow:0 0 6px #cc99ff,0 0 12px #9933ff;}
-ul {list-style:none;padding:0;margin:10px 0 0 0;}
-ul li {font-size:1em;margin:5px 0;text-shadow:0 0 6px #fff,0 0 12px #8000ff;}
-.social-buttons {display:flex;justify-content:center;gap:30px;margin-top:25px;}
-.social-buttons div {display:flex;flex-direction:column;align-items:center;}
-.icon {width:60px;height:60px;background-color:black;border-radius:12px;display:flex;align-items:center;justify-content:center;transition:transform 0.2s ease, box-shadow 0.3s ease;}
-.icon img {width:50px;height:50px;}
-.icon.instagram:hover {transform:scale(1.2);box-shadow:0 0 20px #ff33ff,0 0 30px #ff99ff;}
-.icon.tiktok:hover {transform:scale(1.2);box-shadow:0 0 20px #33ffff,0 0 30px #00ffff;}
-.social-name {margin-top:5px;text-align:center;font-weight:bold;}
-.instagram-name {color:#ff99ff;text-shadow:0 0 6px #ff33ff,0 0 12px #ff99ff;}
-.tiktok-name {color:#33ffff;text-shadow:0 0 6px #33ffff,0 0 12px #00ffff;}
-.footer {text-align:center;margin-top:30px;font-size:0.9em;color:#ccc;text-shadow:0 0 4px #8000ff;}
-.contact-title {text-align:center;margin-top:40px;font-weight:bold;text-shadow:0 0 6px #fff,0 0 12px #8000ff;}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.calculadora {
+    background: #1c1c1c;
+    padding: 20px;
+    border-radius: 20px;
+    width: 300px;
+}
+
+#display {
+    width: 100%;
+    height: 70px;
+    background: #292929;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 30px;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    height: 55px;
+    border: none;
+    border-radius: 12px;
+    background: #333;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #444;
+}
+
+.operador {
+    background: #7138a8;
+}
+
+.operador:hover {
+    background: #8548bd;
+}
+
+.igual {
+    background: #9b5de5;
+    grid-column: span 2;
+}
+
+.limpar {
+    background: #a83232;
+}
 </style>
 </head>
+
 <body>
-<div class="container">
-<h1>Nm7z Store</h1>
-<h2>Brainrots</h2>
-<table>
-<tr><td>La Vacca Saturno Saturnita</td><td class="price">R$0,10</td><td class="rate">275K/s</td></tr>
-<tr><td>Agarrini La Palini</td><td class="price">R$0,16</td><td class="rate">450K/s</td></tr>
-<tr><td>Los Tralaleritos [Gold]</td><td class="price">R$0,30</td><td class="rate">625K/s</td></tr>
-<tr><td>Las Tralaleritas</td><td class="price">R$0,45</td><td class="rate">650K/s</td></tr>
-<tr><td>Los Orcalitos [🌮]</td><td class="price">R$0,56</td><td class="rate">705K/s</td></tr>
-<tr><td>Los Matteos [🎩]</td><td class="price">R$1,04</td><td class="rate">1.3M/s</td></tr>
-<tr><td>Dul Dul Dul [Galaxy]</td><td class="price">R$2,08</td><td class="rate">2.6M/s</td></tr>
-<tr><td>Grainpuss Medussi [Gold, 🍬]</td><td class="price">R$3,36</td><td class="rate">4.2M/s</td></tr>
-<tr><td>Job Job Job Sahur [🦈, 🌮]</td><td class="price">R$3,36</td><td class="rate">4.2M/s</td></tr>
-<tr><td>Job Job Job Sahur [✨]</td><td class="price">R$3,44</td><td class="rate">4.3M/s</td></tr>
-<tr><td>Chacheci [🇲🇽, 🔥, 🌮, 🚀]</td><td class="price">R$4,48</td><td class="rate">5.6M/s</td></tr>
-<tr><td>La Cucaracha [🔥, 🦀, 🌮]</td><td class="price">R$4,56</td><td class="rate">5.7M/s</td></tr>
-<tr><td>Horegini Boom [🔥]</td><td class="price">R$12,00</td><td class="rate">16.5M/s</td></tr>
-<tr><td>Quesadilla Crocodila [Bloodrot, 🕷️]</td><td class="price">R$12,00</td><td class="rate">16.5M/s</td></tr>
-<tr><td>Los Mobilis</td><td class="price">R$18,00</td><td class="rate">22M/s</td></tr>
-<tr><td>Los Noo My Hotpotsitos [🍬]</td><td class="price">R$18,00</td><td class="rate">22M/s</td></tr>
-<tr><td>Mieteteira Bicicleteira</td><td class="price">R$23,00</td><td class="rate">26M/s</td></tr>
-<tr><td>Los Noo My Hotpotsitos [🌮, 🍬]</td><td class="price">R$20,00</td><td class="rate">33M/s</td></tr>
-<tr><td>Quesadilla Crocodila [☄️, 🌮, 🇲🇽, 🕷️]</td><td class="price">R$22,00</td><td class="rate">40.5M/s</td></tr>
-<tr><td>Los Combinasionas [Candy, 🌮, 🌀]</td><td class="price">R$30,00</td><td class="rate">150M/s</td></tr>
-<tr><td>Mieteteira Bicicleteira [🔥]</td><td class="price">R$50,00</td><td class="rate">156M/s</td></tr>
-</table>
-<h2>Eventos</h2>
-<ul>
-<li>[🌮] = Tacos</li>
-<li>[🍬] = Chiclete</li>
-<li>[🇧🇷] = Evento Brasileiro</li>
-<li>[🦀] = Rave De Caranguejo</li>
-<li>[🎩] = Matteo</li>
-<li>[🌀] = Glitch</li>
-<li>[✨] = 4 De Julho (Fogos De Artifício)</li>
-<li>[🐱] = Nyan Cat</li>
-<li>[🦈] = Orcalero (Barbatana)</li>
-<li>[🔥] = Fogo</li>
-<li>[🇲🇽] = México</li>
-<li>[☄️] = La Vacca</li>
-<li>[💣] = Bombardiro Crocodilo</li>
-<li>[🚀] = Espaço</li>
-<li>[🕷️] = Sammyni Spyderini</li>
-<li>[❗] = Gravata</li>
-</ul>
 
-<div class="contact-title">Entre em contato</div>
+<div class="calculadora">
+    <input type="text" id="display" value="0" readonly>
 
-<div class="social-buttons">
-<div>
-<a href="https://www.instagram.com/nme7zxx" target="_blank"><div class="icon instagram"><img src="https://raw.githubusercontent.com/Nme7zxx/Brainrots/refs/heads/main/64dc0fb472958830de717bbc928b817c.jpg" alt="Instagram"></div></a>
-<span class="social-name instagram-name">Instagram</span>
-</div>
-<div>
-<a href="https://www.tiktok.com/@nm7z.store" target="_blank"><div class="icon tiktok"><img src="https://raw.githubusercontent.com/Nme7zxx/Brainrots/refs/heads/main/5d63c857404bab94c94a3f5b719628f2.jpg" alt="TikTok"></div></a>
-<span class="social-name tiktok-name">TikTok</span>
-</div>
+    <div class="botoes">
+        <button class="limpar" onclick="limpar()">C</button>
+        <button onclick="apagar()">⌫</button>
+        <button class="operador" onclick="adicionar('/')">÷</button>
+        <button class="operador" onclick="adicionar('*')">×</button>
+
+        <button onclick="adicionar('7')">7</button>
+        <button onclick="adicionar('8')">8</button>
+        <button onclick="adicionar('9')">9</button>
+        <button class="operador" onclick="adicionar('-')">−</button>
+
+        <button onclick="adicionar('4')">4</button>
+        <button onclick="adicionar('5')">5</button>
+        <button onclick="adicionar('6')">6</button>
+        <button class="operador" onclick="adicionar('+')">+</button>
+
+        <button onclick="adicionar('1')">1</button>
+        <button onclick="adicionar('2')">2</button>
+        <button onclick="adicionar('3')">3</button>
+        <button onclick="adicionar('.')">.</button>
+
+        <button onclick="adicionar('0')">0</button>
+        <button class="igual" onclick="calcular()">=</button>
+    </div>
 </div>
 
-<div class="footer">© 2025 Nm7z Store - Todos Os Direitos Reservados.</div>
-</div>
+<script>
+const display = document.getElementById("display");
+
+function adicionar(valor) {
+    if (display.value === "0") {
+        display.value = valor;
+    } else {
+        display.value += valor;
+    }
+}
+
+function limpar() {
+    display.value = "0";
+}
+
+function apagar() {
+    display.value = display.value.slice(0, -1) || "0";
+}
+
+function calcular() {
+    try {
+        if (!/^[0-9+\-*/. ()]+$/.test(display.value)) {
+            throw new Error();
+        }
+        display.value = Function('"use strict"; return (' + display.value + ')')();
+        if (!Number.isFinite(Number(display.value))) {
+            throw new Error();
+        }
+    } catch {
+        display.value = "Erro";
+    }
+}
+</script>
+
 </body>
-                                                              </html>
+</html>
+
